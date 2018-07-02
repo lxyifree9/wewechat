@@ -1,0 +1,79 @@
+<import src="../template/product.wxml" />
+<view class="shopCarPage">
+  <view class="shopCarBox">
+    <!-- 购物车页面顶部为定位及编辑商品 -->
+    <view class="shopCarTop">
+      <view class="address">
+        <image class="local" src="https://www.ifree9.cn/uploads/static/local.png"></image>
+        <text class="localAddress">成都  高新区  天府三街  </text>
+      </view>
+      <text class="editProduct">编辑商品</text>
+    </view>
+    <!-- 其下为加入购物车的商品的信息 -->
+    <view class="productBox">
+      <view class="productSaler" wx:for="{{cart}}">
+        <image class="productImg" src="https://www.ifree9.cn/uploads/static/admit.png" bindchange="checkboxChange"></image>
+        <text class="productSalerName">{{item.goodsName}}</text>
+        <view class="productSaleChild">
+          <view class="productChildCircle">
+            <image class="productImg"></image>
+          </view>
+          <view class="productChildPic" id='{{item.goodsId}}'>
+            <image class="productChildImg" src="{{item.goodsPic}}" bindchange="checkboxChange"></image>
+          </view>
+          <view class="productChildDesc">
+            <text class="productDescTitle"><text class="fresh">生鲜</text>{{item.goodsDetails}}</text>
+            <text class="productDescParameter">{{item.goodsPortion}}</text>
+            <view class="quantity">
+              <view class="quantityPrice">￥{{item.goodsPrice}}</view>
+              <view class="stepper">
+                <text id="del{{index}}" size="mini" bindtap="delCount">-</text>
+                <text class="number">{{item.count}}</text>
+                <text class="normal" id="add{{index}}" type="default" size="mini" bindtap="addCount">+</text>
+              </view>
+              <image id="img{{index}}" src="../../assets/images/new2.png" bindtap="delGoods"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="settlement"><!-- 结算 -->
+        <view class="settlementCircle">
+          <image class="productImg" src="https://www.ifree9.cn/uploads/static/selected-admit.png"
+           bindchange="checkboxChange"></image>
+          <text>全选</text>
+        </view>
+        <view class="settlementSelect">
+          <text class="SelectAllPrice">总计: 
+           </text>
+           <text class="redPrice">￥{{total}}</text>
+        </view>
+        <view class="settlementButton" bindtap='settleTap'>结算({{goodsCount}})</view>
+      </view>
+    </view>
+  </view>
+  <!-- 可能喜欢推荐 -->
+  <view class="alike">
+    <view class="alikeTitle">
+      <text class="alikeTitleTxt">猜您还可能喜欢</text>
+    </view>
+    <!-- productshow -->
+    <view class="productshow">
+      <block wx:for="{{productList}}">
+        <view class="half">
+          <view class="product-pic">
+            <image src="{{item.goodsPic}}"></image>
+            <text class="product-desc">{{item.goodsDetails}}</text>
+            <text class="product-price">￥{{item.goodsPrice}}</text>
+          </view>
+          <view class="discuss">
+            <text class="discuss-good">好评率{{item.praise}}%</text>
+            <text class="product-alike">看相似</text>
+          </view>
+        </view>
+      </block>
+      <view class="layload">
+        <text class="loading">点击继续加载</text>
+      </view>
+    </view>
+  </view>
+</view>

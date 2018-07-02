@@ -1,0 +1,247 @@
+<view class="top-tab"> <!-- 头部导航横向滚动条 开始 -->
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <block wx:for="{{topScrollList}}">
+      <view class="tab-item {{currentTab==item.current?'active':''}}"
+        data-current="{{item.current}}" bindtap="swichNav">
+        {{item.swichName}}
+      </view>
+    </block>
+  </scroll-view><!-- 头部导航横向滚动条 结束 -->
+  <!-- 由头部导航项映射至下方各项内容 开始 -->
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <block wx:for="{{topScrollList}}" wx:for-index="idx" data-idx="{{idx}}" data-current="{{idx}}">
+      <swiper-item wx:if="{{idx==0}}"><!-- 首页 idx=0 -->
+        <scroll-view class="poscroll" scroll-y="true" class="scoll-h" bindscroll="scroll" scroll-top="{{scrollTop}}" bindscrolltolower="getMore"><!-- 首页idx=0 内容 -->
+          <block wx:for="{{homeDataList}}" wx:key="*this" wx:if="{{item.current==idx}}"><!--遍历首页idx=0 信息-->
+            <view class="section"> <!---Carousel轮播图 开始-->
+              <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="4000" duration="1000">
+                <block wx:for="{{item.imgUrls}}">
+                  <swiper-item>
+                    <image src="{{item.picUrl}}" class="slide-image" mode="widthFix" />
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+            <view><!-- 海报图 -->
+              <image class="postbox" src='https://www.ifree9.cn/uploads/static/indexPost.gif' mode="widthFix"></image>
+            </view>
+            <view id="panel" class=""><!-- 操作选项 -->
+              <view class="">
+                <block wx:for="{{item.categoryImg}}">
+                  <view class="category">
+                    <image class="category-image" src="{{item.cateUrl}}" mode="widthFix" />
+                    <text class="category-text">{{item.cateName}}</text>
+                  </view>
+                </block>
+              </view>
+            </view>
+            <view><!-- 海报图 -->
+              <image class="postbox" src='https://www.ifree9.cn/uploads/static/cheapcard.gif' mode="widthFix"></image>
+            </view>
+            <view class='news-slider'><!-- 时讯轮播 -->
+              <view class="news-post">
+                <image class="news-tit" src='https://www.ifree9.cn/uploads/static/news-tit.png'></image>
+              </view>
+              <view class="news-content">
+                <swiper class="news-swiper" vertical="{{true}}" autoplay="{{true}}" interval="4000" duration="1000">
+                  <block wx:for="{{item.newsTit}}">
+                    <swiper-item>
+                      <text class='red'>{{item.hot}}</text>
+                      <text class="slide-tit">{{item.txt}}</text>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+              <view class="news-more">
+                <text class='more'>更多>></text>
+              </view>
+            </view>
+            <view><!--零食秒杀-->
+              <view class="seckill">
+                <view class="seckill-title">
+                  <text class="sec-name">零食秒杀</text>
+                  <text class="sec-now"><text>8</text>点场</text>
+                  <text class="sec-time" id="sec-time">10:12:45</text>
+                </view>
+                <view class="seckill-more">
+                  <text class="">京选尖货秒</text>
+                  <image src="https://www.ifree9.cn/uploads/static/right.png"></image>
+                </view>
+              </view>
+              <view class="chose-seckill">
+                <scroll-view class="chose_scroll_x_box" scroll-x="true">
+                  <block wx:for="{{item.choseList}}">
+                    <view class="chose_hot_box" catchtap="onGoodsDetailsTap" id="{{item.secId}}">
+                      <image class="chose_hot_img" src="{{item.secCode}}"></image>
+                      <view class="chose_price">
+                        <text class="chose_hot_new">￥{{item.newPrice}}</text>
+                        <text class="chose_hot_old">￥{{item.oldPrice}}</text>
+                      </view>
+                    </view>
+                  </block>
+                </scroll-view>
+              </view>
+            </view>
+            <view><!-- 海报图 -->
+              <image class="postbox" src='https://www.ifree9.cn/uploads/static/buy.gif' mode="widthFix"></image>
+            </view>
+            <!-- graphic -->
+            <view class="graphic">
+              <view class=" hotburn">
+                <block wx:for="{{item.graphicImg}}">
+                  <view class=" graphic_category">
+                    <text class="graphic_category_title">{{item.graphName}}</text>
+                    <text class="graphic_category_desc">{{item.graphDesc}}</text>
+                    <image class="graphic_category_image" src="{{item.graphPic}}" mode="widthFix" />
+                  </view>
+                </block>
+              </view>
+            </view>
+            <view class="llbox">
+              <image class="postbox lovelife" src='https://www.ifree9.cn/uploads/static/lovelife.jpg' mode="widthFix">
+              </image>
+            </view>
+            <!-- meatShow 展示 -->
+            <view class="meat">
+              <block wx:for="{{item.meatImg}}">
+                <view class="meatshow">
+                  <view class="meat-head">
+                    <text class="meat-head-title">{{item.meatTitle}}</text>
+                    <text class="meat-head-desc">{{item.desc}}</text>
+                  </view>
+                  <view class="meat-pic">
+                    <image src="{{item.meatLeftImg}}" mode="widthFix" width="45%"></image>
+                    <image src="{{item.meatRightImg}}" mode="widthFix" width="45%"></image>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <view class="llbox">
+              <image class="postbox lovelife" src='https://www.ifree9.cn/uploads/static/shopmarcket.jpg' mode="widthFix">
+              </image>
+            </view>
+            <!-- market 逛商场-->
+            <view class="market">
+              <block wx:for="{{item.marketList}}">
+                <view class="marketshow">
+                  <view class="market-left">
+                    <text class="market-left-title">{{item.markTitle}}</text>
+                    <text class="market-left-desc">{{item.markDesc}}</text>
+                  </view>
+                  <view class="market-pic">
+                    <image src="{{item.markImg}}" mode="widthFix"></image>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <!-- recommend -->
+            <view class="recommend">
+              <view class="gray-text">
+                <text class="gray-text-img am-icon-arrow-circle-o-right">为您推荐</text>
+                <text class="black-text">登录账号，查看专属推荐零食>></text>
+              </view>
+            </view>
+            <!-- productshow -->
+            <view class="productshow">
+              <block wx:for="{{item.productImg}}">
+                <view class="half">
+                  <view class="product-pic">
+                    <image src="{{item.goodsPic}}"></image>
+                    <text class="product-desc">{{item.goodsDetails}}</text>
+                    <text class="product-price">￥{{item.goodsPrice}}</text>
+                  </view>
+                  <view class="discuss">
+                    <text class="discuss-good">好评率{{item.praise}}%</text>
+                    <text class="product-alike">看相似</text>
+                  </view>
+                </view>
+              </block>
+              <view class="layload">
+                <text class="loading">点击继续加载</text>
+              </view>
+            </view>
+             
+            <view class="otherbar">
+              <view class="otherbar-center">
+                <text>登录</text>
+                <text>|</text>
+                <text>注册</text>
+                <text>|</text>
+                <text>反馈</text>
+                <text>|</text>
+                <text>回到顶部</text>
+              </view>
+            </view>
+            <view class="copyright">
+              <text class="footer-copyright">Copyright © 2016-2018 尚自由ifree9.cn 版权所有</text>
+            </view> 
+
+          </block>
+        </scroll-view>
+        <view class="widget-goTop" bindtap="goTop" wx:if="{{ floorstatus }}"> 
+          <view class="gotop-wrap">
+            <view class="icon-top">
+              <image src="https://www.ifree9.cn/uploads/static/gotop.png"></image>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item wx:else><!-- 其他页 -->
+          <scroll-view class="poscroll" scroll-y="true" class="scoll-h"
+           bindscroll="scroll" scroll-top="{{scrollTop}}" bindscrolltolower="getMore">
+              <view>
+                <view class="detailPage">
+                  <!-- content -->
+                  <view class="content">
+                    <block wx:for="{{conNavList}}" wx:if="{{item.current==idx}}">
+                      <!-- 导航效果 -->
+                      <view class="contNav">
+                        <view class="conNavList" wx:for="{{item.choseList}}">
+                          <image class="conNavListImg" src="{{item.secCode}}"></image>
+                          <text class="conNavListTxt">{{item.secName}}</text>
+                        </view>
+                      </view>
+                      <!-- 精选新品 -->
+                      <view class="recommend-product">
+                        <view class="hotsale-title">
+                          <image src="https://www.ifree9.cn/uploads/static/giftchose.png"></image>
+                          <view class="text text-selected">精选新品</view>
+                        </view>
+                        <view class="productshow">
+                          <block wx:for="{{item.productImg}}">
+                            <view class="half">
+                              <view class="product-pic">
+                                <image src="{{item.goodsPic}}"></image>
+                                <text class="product-desc">{{item.goodsDetails}}</text>
+                                <text class="product-price">￥{{item.goodsPrice}}</text>
+                              </view>
+                              <view class="discuss">
+                                <text class="discuss-good">好评率{{item.praise}}%</text>
+                                <text class="product-alike">看相似</text>
+                              </view>
+                            </view>
+                          </block>
+                          <view class="layload">
+                            <text class="loading">点击继续加载</text>
+                          </view>
+                        </view>
+                        <!-- </block> -->
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </view>
+          </scroll-view>
+           
+        </swiper-item>
+    </block>
+  </swiper> <!-- 由头部导航项映射至下方各项内容 结束 -->
+  <!-- 回到顶部 -->
+  <view class="widget-goTop" bindtap="goTop" wx:if="{{ floorstatus }}">
+    <view class="gotop-wrap">
+      <view class="icon-top">
+        <image src="https://www.ifree9.cn/uploads/static/gotop.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

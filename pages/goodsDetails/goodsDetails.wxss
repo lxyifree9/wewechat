@@ -1,0 +1,429 @@
+@import "../template/product.wxss";
+/**goodsTop**/
+.goodsTop{
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+  background: #fff;
+}
+.goodsSwiper{
+  display: block; 
+  width: 100%;
+  height: 750rpx;
+  overflow: hidden;
+  border: 0;
+}
+.goodsImg{
+  width:100%;
+  height: 100%;
+}
+.goodsNumber{
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  bottom:20rpx;
+  right: 20rpx;
+  border: 1px solid #ddd;
+  font-size: 26rpx;
+  font-family: KaiTi;
+  opacity: 0.7;
+  border-radius: 100%;
+  background: #fff;
+  color: #8A2BE2; 
+}
+/**goodsDesc**/
+.goodsDesc{
+  width: 100%;
+}
+.goodsDescTop{
+  width: 100%;
+}
+.goodsDescTxt{
+  width: 77%;
+  display: inline-block;
+  padding-left: 20rpx;
+}
+.goodsDescTxtImg{
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  background: #f00;
+  color: #fff;
+  padding: 0 5rpx;
+  border-radius: 5rpx;
+}
+.goodsDescTxtCont{
+  font-size: 28rpx;
+}
+.goodsDescHeart{
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.heartImg{
+  width: 38%;
+  margin: auto 31%;
+  height: 55rpx;
+  display: block;
+  margin-bottom: -10rpx;
+}
+.heartTxt{
+  font-size: 26rpx;
+}
+/**goodsDescCenter**/
+.goodsDescCenter{
+  width: 100%;
+}
+.goodsDescCenterTxt{
+  width: 96%;
+  display: block;
+  margin: 0 auto;
+  font-size: 24rpx;
+  color: #696969;
+}
+.goodsDescCenterTxt text{
+  color: #f00;
+}
+/**goodsDescPrice**/
+.goodsDescPrice{
+  width: 100%;
+  margin-bottom: 15rpx;
+}
+.goodsPrice{
+  margin-left: 10rpx;
+  color: #f00;
+  font-weight: bold;
+}
+.goodsJiangjia{
+  float: right;
+  margin-right: 20rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  padding: 4rpx 8rpx;
+}
+/**payWays**/
+.payWays{
+  width: 100%;
+  margin-top: 10rpx;
+  padding-top: 25rpx;
+  background: #fff;
+}
+.getCheapCard{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+.redCard{
+  height: 35rpx;
+  line-height: 35rpx;
+  background: #f00;
+  color: #fff;
+  margin-right: 20rpx;
+}
+/**saleFast**/
+.saleFast{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-bottom: 15rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+.boxCard{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin-bottom: 8rpx;
+}
+.redBoxCard{
+  width: 55rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border: 1px solid #f00;
+  color: #f00;
+  border-radius: 4rpx;
+  display: inline-block;
+  margin-left: 60rpx;
+}
+/***choised**/
+.choised{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+.sendAddress{
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+.sendTo{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  
+}
+.sendToTxt{
+  vertical-align: middle;
+}
+.sendToImg{
+  width: 32rpx;
+  height: 32rpx;
+  margin: 14rpx 0;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+.sendMsg{
+  display: block;
+  padding-left: 60rpx;
+  color: #f00;
+}
+/*storeMsg*/
+.storeMsg{
+  width: 100%;
+  background: #fff;
+}
+.storeTop{
+  width: 100%;
+  padding-left: 20rpx;
+}
+.storeLogo{
+  width: 180rpx;
+  height: 60rpx;
+  display: inline-block;
+}
+.storeName{
+  width: 70%;
+  height: 60rpx;
+  margin-left: 8rpx;
+  display: inline-block;
+}
+.storeTitle{
+  width: 80%;
+  height: 30rpx;
+  margin-right: 5rpx;
+  font-size: 24rpx;
+} 
+.storeTitlered{
+  width: 20rpx;
+  height: 20rpx;
+  line-height: 20rpx;
+  background: #f00;
+  font-size: 23rpx;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.storeTitleBlock{
+  height: 30rpx;
+  display: block;
+  font-size: 23rpx;
+  color: #696969;
+}
+/*collection*/
+.collection{
+  width: 100%;
+  padding: 0 20rpx;
+}
+.collecInfo{
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+.collecNumb{
+  font-size: 30rpx;
+  color: #000;
+  display: block;
+  margin-bottom: -20rpx;
+  border-right: 1px dashed #afafaf;
+}
+.collecProduct{
+  font-size: 24rpx;
+  color: #696969;
+}
+/**contact**/
+.contact{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.contactInfo{
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #dfdfdf;
+  border-radius: 8rpx;
+  line-height: 60rpx;
+  margin-bottom: 20rpx;
+}
+.contactImg{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.collecDesc{
+  font-size: 27rpx;
+  color: #696969;
+  vertical-align: middle;
+}
+/**evaluate**/
+.evaluate{
+  width: 100%;
+}
+.evaluateTitle{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+.evaluateNumber{
+  margin-left: 20rpx;
+}
+.goodEvaluate{
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+.red{
+  color: #f00;
+}
+/**straightMatter**/
+.straightMatter{
+  width: 100%;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #dfdfdf;
+  background: #fff;
+}
+.matterTop{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rpx;
+  padding-top: 10rpx;
+}
+.matterStar{
+  width: 28rpx;
+  height: 28rpx;
+  padding-bottom: 8rpx;
+}
+.matterName{
+  font-size: 20rpx;
+  color: #333;
+  padding-right: 40rpx;
+}
+.matterText{
+  width: 96%;
+  margin-right: 4%;
+  height: 123rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  color: #080808;
+  letter-spacing: 1rpx;
+  display: block;
+}
+.matterDate{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20rpx;
+  color: #333;
+  padding-right: 50rpx;
+  margin-bottom: 20rpx;
+}
+.moreMatter{
+  width: 100%;
+  height: 60rpx;
+  margin: 8rpx 0 20rpx 0;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #8A2BE2;
+  background: #efefef;
+}
+.moreMatter text{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background: #ddd;
+  border-radius: 10rpx;
+  padding: 10rpx 100rpx;
+}
+
+
+/**footTabs**/
+.footTabs{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  z-index: 999;
+}
+.footTabsLeft{
+  width: 50%;
+}
+.salers{
+  width: 33.3333333%;
+  display: inline-block;
+  text-align: center;
+}
+.salersImg{
+  width: 40%;
+  margin: 5% 30% -10% 30%;
+  height: 50rpx;
+  display: block;
+}
+.salersTxt{
+  font-size: 25rpx;
+}
+
+
+
+.footTabsRight{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.putInCar{
+  width: 50%;
+  height: 100%;
+  line-height: 100rpx;
+  display: inline-block;
+  text-align: center;
+}
+.putInCarImg{
+  width: 20%;
+  height: 30rpx;
+  margin: 0 2rpx;
+  vertical-align: middle;
+}
+.putInCarTxt{
+  font-size: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+}
+.rightOne{
+  background: #eeb174;
+}
+.rightTwo{
+  background: #f23030;
+}

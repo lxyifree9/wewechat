@@ -1,0 +1,46 @@
+
+<view class="search-tab">
+  <view class="search_scroll_x_box">
+    <view class="search_hot_box" bindtap='linkSearchTap'>
+      <image src='https://www.ifree9.cn/uploads/static/search.png'></image>
+      <input class="search-text" type="text"
+       placeholder="搜索商品" focus="{{focus}}"/>
+    </view>
+  </view>
+</view>
+  <view class="all-select">
+    <!-- 左边种类 -->
+    <view class="category-chose">
+      <scroll-view scroll-y="true">
+        <view class="category-box">
+          <block wx:for="{{category}}">
+            <view class="category {{conNav == item.cateId? 'active' : ''}}" bindtap="ontouchCategoryTap" data-id="{{item.cateId}}" data-idx="{{index}}">
+              <text class="category-name">{{item.cateName}}</text>
+              <image src="{{item.cateIco}}" mode="widthFix"></image>
+            </view>
+            <!-- 右边某一种类的详情 -->
+            <view class="product-chose">
+              <scroll-view scroll-y="true">
+                <view class="product-scroll" wx:if="{{item.cateId==conNav}}">
+                  
+                    <view class="catename">
+                      <text>{{item.cateName}}</text>
+                      <text class="catemore">查看更多>></text> 
+                    </view>
+                    <view class="product-box">
+                      <block wx:for="{{item.productList}}" wx:if="{{item.cateNum==conNav}}">
+                        <view class="product">
+                          <image src="{{item.goodsPic}}" mode="widthFix"></image>
+                          <text class="product-name">{{item.goodsName}}</text>
+                        </view>
+                      </block>
+                    </view>
+                </view>
+              </scroll-view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    
+</view>

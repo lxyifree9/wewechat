@@ -1,0 +1,160 @@
+.search-tab{
+  height:36px;
+  width: 100%;
+  color: #1a1a1a;
+  font-size: 13px;
+  background-color: #dfdfdf;
+  z-index: 9999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  position: fixed;
+  top: 0;
+  line-height:35px;
+}
+.search_scroll_x_box {
+  width: 90%;
+  height: 75%;
+  margin: 5px auto;
+  background: #fff;
+  border-radius: 5px;
+}
+.search_hot_box {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+}
+.search_hot_box image{
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 9999;
+  width: 7%;
+  height: 80%;
+  margin: 1% 2%;
+}
+.search-text{
+  width: 100%;
+  height: 100%;
+}
+.all-select{
+  width: 100%;
+  overflow: hidden; 
+  border: 0;
+  margin-top: 36px;
+} 
+.category-chose{
+  display: inline-block;
+  position: absolute;
+  top:36px;
+  left:0;
+  width: 25%;
+  border-right: 1px solid #dfdfdf;
+}
+.category-chose scroll-view{
+  height: 600px;
+}
+.category-box{
+  width: 100%;
+  padding: 10rpx;
+}
+.category{
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #dfdfdf;
+}
+.active{
+  background: #B0C4DE;
+}
+.category-name{
+  display: inline-block;
+  vertical-align: middle;
+} 
+.category image{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 5rpx;
+  vertical-align: middle;
+}
+.product-chose{
+  display: inline-block;
+  width: 75%;
+  position: fixed;
+  top:36px;
+  left: 25%; 
+  right: 0;
+}
+.product-chose scroll-view{
+  height: 600px;
+}
+.product-scroll{
+  width: 100%;
+}
+.catename{
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #dfdfdf;
+}
+.catemore{
+  float: right;
+  font-size: 13px;
+  margin-right: 50rpx;
+}
+.product-box{
+  width: 100%;
+}
+.product{
+  width: 33.333333333%;
+  text-align: center;
+  display: inline-block
+}
+.product image{
+  display: block;
+  margin: 5% 20%;
+  width: 60%;
+}
+.product-name{
+  display: block;
+  font-size: 20rpx;
+  
+}
+/***************************************/
+.left_cell {
+    height: 90rpx;
+    border-bottom: 3rpx solid #f8f7f7;
+}
+.left_margin {
+    background-color: #f1f1f1 ;
+    width: 6rpx;
+    display: inline-block;
+    
+    height: 100%;
+    vertical-align: middle;
+}
+.left_title {
+    color: #777777;
+    margin-left: 24rpx;
+    font-size: 30rpx;
+    height: 100%;
+}
+
+/*被选中*/
+.left_cell_selected .left_margin {
+    background-color: #ff3b30;
+}
+/*被选中的文本颜色*/
+.left_cell_selected .left_title {
+    color: #e42e16;
+}

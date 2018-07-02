@@ -1,0 +1,52 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="https://www.ifree9.cn/uploads/static/header_cry_icon.png" background-size="cover"></image>
+    <text class="userinfo-nickname">Baise_Toi_</text>
+    <text  class="editModify">修改资料</text>
+  </view>
+  <view class="orderForm">
+    <view class="orderTop">
+      <text class="orderLeft">我的订单</text>
+      <view class="orderRight">
+        <text class="orderTxt">全部订单</text>
+        <image class="orderImg" src="https://www.ifree9.cn/uploads/static/allSales.png"></image>
+      </view>
+    </view>
+    <view class="orderCenter">
+      <view class="account">
+        <view class="accCont" wx:for="{{orderList}}">
+          <image class="accContImg" src="{{item.pic}}"></image>
+          <text class="accContTxt">{{item.txt}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="orderFoot">
+      <view class="footBox">
+        <view class="footCont" wx:for="{{footContList}}">
+          <image class="footContImg" src="{{item.pic}}"></image>
+          <text class="footContTxt">{{item.txt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="post">
+    <image class="postImg" src="https://www.ifree9.cn/uploads/static/post.jpg"></image>
+  </view>
+
+
+  <view class="info_list">
+    <block wx:for="{{userListInfo}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd">
+              <image src="{{item.icon}}"></image>
+            </view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view class="with_arrow"><image src='https://www.ifree9.cn/uploads/static/icon-arrowdown.png'></image></view>
+        </view>
+    </block>
+  </view>
+</view>

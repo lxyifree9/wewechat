@@ -1,0 +1,260 @@
+<import src="product.wxml" />
+<template name="loadingHome">
+  <!--casourel-->
+  <view class="section">
+    <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="4000" duration="1000">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view>
+    <image class="postbox" src='https://www.ifree9.cn/uploads/static/indexPost.gif' mode="widthFix"></image>
+  </view>
+  <view id="panel" class="flex-column">
+    <view class="flex-cell flex-row">
+      <block wx:for="{{categoryImg1}}">
+        <view class="flex-cell flex-row category">
+          <image class="category-image" src="{{item.img}}" mode="widthFix" />
+          <text class="category-text">{{item.msg}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="flex-row flex-cell">
+      <block wx:for="{{categoryImg2}}">
+        <view class="flex-cell flex-row category">
+          <image class="category-image" src="{{item.img}}" mode="widthFix" />
+          <text class="category-text">{{item.msg}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view>
+    <image class="postbox" src='https://www.ifree9.cn/uploads/static/cheapcard.gif' mode="widthFix"></image>
+  </view>
+  <view class='news-slider'>
+    <view class="news-post">
+      <image class="news-tit" src='https://www.ifree9.cn/uploads/static/news-tit.png'></image>
+    </view>
+    <view class="news-content">
+      <swiper class="news-swiper" vertical="{{true}}" autoplay="{{true}}" interval="4000" duration="1000">
+        <block wx:for="{{newsTit}}">
+          <swiper-item>
+            <text class='red'>{{item.hot}}</text>
+            <text class="slide-tit">{{item.txt}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="news-more">
+      <text class='more'>更多>></text>
+    </view>
+  </view>
+  <view>
+    <view class="seckill">
+      <view class="seckill-title">
+        <text class="sec-name">零食秒杀</text>
+        <text class="sec-now"><text>8</text>点场</text>
+        <text class="sec-time" id="sec-time">10:12:45</text>
+      </view>
+      <view class="seckill-more">
+        <text class="">京选尖货秒</text>
+        <image src="https://www.ifree9.cn/uploads/static/right.png"></image>
+      </view>
+    </view>
+    <view class="chose-seckill">
+      <scroll-view class="chose_scroll_x_box" scroll-x="true">
+        <view class="chose_hot_box" wx:for="{{choseList}}" catchtap="onGoodsDetailsTap">
+          <image class="chose_hot_img" src="{{item.img}}"></image>
+          <view class="chose_price">
+            <text class="chose_hot_new">￥{{item.newPrice}}</text>
+            <text class="chose_hot_old">￥{{item.oldPrice}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view>
+    <image class="postbox" src='https://www.ifree9.cn/uploads/static/buy.gif' mode="widthFix"></image>
+  </view>
+  <view class="graphic flex-column">
+    <view class="flex-cell flex-row hotburn">
+      <block wx:for="{{graphicImg1}}">
+        <view class="flex-cell flex-row graphic_category">
+          <text class="graphic_category_title">{{item.title}}</text>
+          <text class="graphic_category_desc">{{item.desc}}</text>
+          <image class="graphic_category_image" src="{{item.img}}" mode="widthFix" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="graphic_down flex-column">
+    <view class="flex-cell flex-row hotburn">
+      <block wx:for="{{graphicImg2}}">
+        <view class="flex-cell flex-row graphic_category">
+          <text class="graphic_category_title">{{item.title}}</text>
+          <text class="graphic_category_desc">{{item.desc}}</text>
+          <image class="graphic_category_image" src="{{item.img}}" mode="widthFix" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="llbox">
+    <image class="postbox lovelife" src='https://www.ifree9.cn/uploads/static/lovelife.jpg' mode="widthFix"></image>
+  </view>
+  <view class="meat">
+    <view class="meatshow">
+      <block wx:for="{{meatImg1}}">
+        <view class="meat-head">
+          <text class="meat-head-title">{{item.title}}</text>
+          <text class="meat-head-desc">{{item.desc}}</text>
+        </view>
+        <view class="meat-pic">
+          <image src="{{item.picleft}}" mode="widthFix"></image>
+          <image src="{{item.picright}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+    <view class="meatshow">
+      <block wx:for="{{meatImg2}}">
+        <view class="meat-head">
+          <text class="meat-head-title">{{item.title}}</text>
+          <text class="meat-head-desc">{{item.desc}}</text>
+        </view>
+        <view class="meat-pic">
+          <image src="{{item.picleft}}" mode="widthFix" width="45%"></image>
+          <image src="{{item.picright}}" mode="widthFix" width="45%"></image>
+        </view>
+      </block>
+    </view>
+    <view class="meatshow">
+      <block wx:for="{{meatImg3}}">
+        <view class="meat-head">
+          <text class="meat-head-title">{{item.title}}</text>
+          <text class="meat-head-desc">{{item.desc}}</text>
+        </view>
+        <view class="meat-pic">
+          <image src="{{item.picleft}}" mode="widthFix"></image>
+          <image src="{{item.picright}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+    <view class="meatshow">
+      <block wx:for="{{meatImg4}}">
+        <view class="meat-head">
+          <text class="meat-head-title">{{item.title}}</text>
+          <text class="meat-head-desc">{{item.desc}}</text>
+        </view>
+        <view class="meat-pic">
+          <image src="{{item.picleft}}" mode="widthFix" width="45%"></image>
+          <image src="{{item.picright}}" mode="widthFix" width="45%"></image>
+        </view>
+      </block>
+    </view>
+    <view class="meatshow">
+      <block wx:for="{{meatImg5}}">
+        <view class="meat-head">
+          <text class="meat-head-title">{{item.title}}</text>
+          <text class="meat-head-desc">{{item.desc}}</text>
+        </view>
+        <view class="meat-pic">
+          <image src="{{item.picleft}}" mode="widthFix"></image>
+          <image src="{{item.picright}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+    <view class="meatshow">
+      <block wx:for="{{meatImg6}}">
+        <view class="meat-head">
+          <text class="meat-head-title">{{item.title}}</text>
+          <text class="meat-head-desc">{{item.desc}}</text>
+        </view>
+        <view class="meat-pic">
+          <image src="{{item.picleft}}" mode="widthFix" width="45%"></image>
+          <image src="{{item.picright}}" mode="widthFix" width="45%"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="llbox">
+    <image class="postbox lovelife" src='https://www.ifree9.cn/uploads/static/shopmarcket.jpg' mode="widthFix"></image>
+  </view>
+  <view class="market">
+    <view class="marketshow">
+      <block wx:for="{{marketImg1}}">
+        <view class="market-left">
+          <text class="market-left-title">{{item.title}}</text>
+          <text class="market-left-desc">{{item.desc}}</text>
+        </view>
+        <view class="market-pic">
+          <image src="{{item.pic}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+    <view class="marketshow">
+      <block wx:for="{{marketImg2}}">
+        <view class="market-left">
+          <text class="market-left-title">{{item.title}}</text>
+          <text class="market-left-desc">{{item.desc}}</text>
+        </view>
+        <view class="market-pic">
+          <image src="{{item.pic}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+    <view class="marketshow">
+      <block wx:for="{{marketImg3}}">
+        <view class="market-left">
+          <text class="market-left-title">{{item.title}}</text>
+          <text class="market-left-desc">{{item.desc}}</text>
+        </view>
+        <view class="market-pic">
+          <image src="{{item.pic}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+    <view class="marketshow">
+      <block wx:for="{{marketImg4}}">
+        <view class="market-left">
+          <text class="market-left-title">{{item.title}}</text>
+          <text class="market-left-desc">{{item.desc}}</text>
+        </view>
+        <view class="market-pic">
+          <image src="{{item.pic}}" mode="widthFix"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="recommend">
+    <view class="gray-text">
+      <text class="gray-text-img am-icon-arrow-circle-o-right">为您推荐</text>
+      <text class="black-text">登录账号，查看专属推荐零食>></text>
+    </view>
+  </view>
+  <view class="productshow">
+    <block wx:for="{{conNavList}}">
+      <template is="product" data="{{item}}"></template>
+    </block>
+  </view>
+
+
+   <view class="layload">
+    <text class="loading">点击继续加载</text>
+  </view> 
+  <view class="otherbar">
+    <view class="otherbar-center">
+      <text>登录</text>
+      <text>|</text>
+      <text>注册</text>
+      <text>|</text>
+      <text>反馈</text>
+      <text>|</text>
+      <text>回到顶部</text>
+    </view>
+  </view>
+   <view class="copyright">
+  <text class="footer-copyright">Copyright © 2016-2018 尚自由ifree9.cn 版权所有</text>
+</view> 
+</template>

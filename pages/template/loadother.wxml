@@ -1,0 +1,28 @@
+<import src="product.wxml" />
+<template name="loadingOther">
+  <view class="detailPage">
+    <!-- content -->
+    <view class="content">
+      <!-- 导航效果 -->
+      <view class="contNav">
+        <view class="conNavList" wx:for="{{conNavList}}">
+          <image class="conNavListImg" src="{{item.goodsPic}}"></image>
+          <text class="conNavListTxt">{{item.goodsName}}</text>
+        </view>
+      </view>
+      <!-- 精选新品 -->
+      <view class="recommend-product">
+        <view class="hotsale-title">
+          <image src="https://www.ifree9.cn/uploads/static/giftchose.png"></image>
+          <view class="text text-selected">精选新品</view>
+        </view>
+        <view class="productshow">
+          <block wx:for="{{conNavList}}">
+            <template is="product" data="{{item}}"></template>
+          </block>
+        </view>
+        <!-- </block> -->
+      </view>
+    </view>
+  </view>
+</template>

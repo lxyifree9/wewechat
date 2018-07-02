@@ -1,0 +1,150 @@
+<import src="../template/product.wxml" />
+<view class="goodsPage">
+  <!-- 商品详情图片展示 -->
+  <view class="goodsTop">
+    <block wx:for="{{goodsImgList}}">
+      <swiper class="goodsSwiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <swiper-item>
+          <image class="goodsImg" src="{{item.goodsPic}}"></image>
+          <text class="goodsNumber">{{item.cateNum}}/8</text>
+        </swiper-item>
+      </swiper>
+      <view class="goodsDesc">
+        <!-- <block wx:for="{{goodsDescList}}"> -->
+          <view class="goodsDescTop">
+            <view class="goodsDescTxt">
+              <text class="goodsDescTxtCont"><text class="goodsDescTxtImg">自营</text>{{item.goodsDetails}}</text>
+            </view>
+            <view class="goodsDescHeart">
+              <image class="heartImg" src="https://www.ifree9.cn/uploads/static/grayHeart.png"></image>
+              <text class="heartTxt">关注</text>
+            </view>
+          </view>
+          <view class="goodsDescCenter">
+            <text class="goodsDescCenterTxt">{{item.goodsPortion}}<text>{{item.uploadDate}}</text></text>
+          </view>
+          <view class="goodsDescPrice">
+            <text class="goodsPrice">￥{{item.goodsPrice}}</text>
+            <text class="goodsJiangjia">降价通知</text>
+          </view>
+        <!-- </block> -->
+      </view>
+      <!-- 底部导航栏 -->
+      <view class="footTabs">
+        <view class="footTabsLeft">
+          <view class="salers" catchtap="onConnectSalerTap">
+            <image class="salersImg" src="https://www.ifree9.cn/uploads/static/selectedConnect.png"></image>
+            <text class="salersTxt">联系卖家</text>
+          </view>
+          <view class="salers" catchtap="onToStoreTap">
+            <image class="salersImg" src="https://www.ifree9.cn/uploads/static/store.png"></image>
+            <text class="salersTxt">进入店铺</text>
+          </view>
+          <view class="salers" catchtap="onToShopcarTap">
+            <image class="salersImg" src="https://www.ifree9.cn/uploads/static/shopcar.png"></image>
+            <text class="salersTxt">购物车</text>
+          </view>
+        </view>
+        <view class="footTabsRight">
+          <view class="putInCar rightOne" catchtap="onAddToShopcarTap" id='{{item.goodsId}}'>
+            <image class="putInCarImg" src="https://www.ifree9.cn/uploads/static/shopCarTo.png"></image>
+            <text class="putInCarTxt">加入购物车</text>
+          </view>
+          <view class="putInCar rightTwo" catchtap="onOrderNowTap">
+            <image class="putInCarImg" src="https://www.ifree9.cn/uploads/static/mustGet.png"></image>
+            <text class="putInCarTxt">立即购买</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 选购详情 -->
+  <view class="payWays">
+    <!-- 领券 -->
+    <view class="getCheapCard">
+      领券：
+      <text class="redCard"> 满159减30 </text>
+      <text class="redCard"> 满59减10 </text>
+    </view>
+    <!-- 促销 -->
+    <view class="saleFast">
+      促销：
+      <text class="boxCard"><text class="redBoxCard">换购</text> 购买1件可优惠换购热销商品</text>
+      <text class="boxCard"><text class="redBoxCard">限购</text> 购买1-50件时享受单件价￥13.90，超出数量以...</text>
+      <text class="boxCard"><text class="redBoxCard">限制</text> 此价格不与套装优惠同时享受</text>
+    </view>
+    <!-- 已选 -->
+    <view class="choised">
+      已选：
+      <text class="choisedTxt">徐香12个70-90g  1件</text>
+    </view>
+    <!-- 送至 -->
+    <view class="sendAddress">
+      <view class="sendTo">
+        送至：
+        <text class="sendToTxt">北京  朝阳区  管庄  </text>
+        <image class="sendToImg" src="https://www.ifree9.cn/uploads/static/local.png"></image>
+      </view>
+      <text class="sendMsg">现货，11:10前下单,预计今天(02月26日)送达</text>
+    </view>
+  </view>
+
+  <!-- 店铺信息概要 -->
+  <view class="storeMsg">
+    <view class="storeTop">
+      <image class="storeLogo" src="https://www.ifree9.cn/uploads/static/storeLogo.jpg"></image>
+      <view class="storeName">
+        <text class="storeTitle">京东自营产地直采专区</text>
+        <text class="storeTitlered">自营</text>
+        <text class="storeTitleBlock">京东团队产地直采</text>
+      </view>
+    </view>
+    <view class="collection">
+      <view class="collecInfo">
+        <text class="collecNumb">18.8万</text>
+        <text class="collecProduct">关注人数</text>
+      </view>
+      <view class="collecInfo">
+        <text class="collecNumb">128</text>
+        <text class="collecProduct">全部商品</text>
+      </view>
+    </view>
+    <view class="contact">
+      <view class="contactInfo">
+        <image class="contactImg" src="https://www.ifree9.cn/uploads/static/grayHeart.png"></image>
+        <text class="collecDesc">关注店铺</text>
+      </view>
+      <view class="contactInfo">
+        <image class="contactImg" src="https://www.ifree9.cn/uploads/static/store.png"></image>
+        <text class="collecDesc">进店逛逛</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 已购商品评价 -->
+  <view class="evaluate">
+    <view class="evaluateTitle">
+      <text class="evaluateNumber">评论(68.5万)</text>
+      <text class="goodEvaluate">好评率<text class="red">98%</text> > </text>
+    </view>
+    <view class="straightMatter" wx:for="{{straightMatterList}}">
+      <view class="matterTop">
+        <image class="matterStar" src="{{item.star}}"></image>
+        <text class="matterName">{{item.buyer}}</text>
+      </view>
+      <text class="matterText">{{item.matter}}</text>
+      <text class="matterDate">{{item.date}}</text>
+    </view>
+    <view class="moreMatter">
+      <text>查看更多评价 >></text>
+    </view>
+    <view class="productshow">
+      <block wx:for="{{productImg}}">
+        <template is="product" data="{{item}}"></template>
+      </block>
+    </view>
+  </view>
+  <view style='width:100%;height:100rpx'></view>
+  
+
+</view>

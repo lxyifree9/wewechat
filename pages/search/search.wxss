@@ -1,0 +1,94 @@
+/* pages/search/search.wxss */
+.search-tab{
+  height:36px;
+  width: 100%;
+  color: #1a1a1a;
+  background: #efefef;
+  font-size: 13px;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  line-height:35px;
+  border-bottom: 1rpx solid #ddd;
+}
+.search_scroll_x_box {
+  width: 100%;
+  height: 75%;
+  margin: 5px auto;
+}
+.search_hot_box {
+  width: 96%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 2%;
+  text-align: center;
+  position: relative;
+}
+.search_hot_box image{
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 99999;
+  width: 6%;
+  height: 80%;
+  margin: 1% 5%;
+}
+.search-text{
+  width: 86%;
+  height: 100%;
+  display: inline-block;
+  background: #fff;
+  border-radius: 5px;
+}
+.search-input{
+  width: 100%;
+  height: 100%;
+}
+.search-btn{
+  width: 12%;
+  height: 100%;
+  display: inline-block;
+  background: #999;
+  color: #fff;
+  border-radius:10rpx; 
+  margin-left: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+  padding: 0!important;
+}
+/*hot*/
+.hot{
+  margin-top: 36px;
+  width: 100%;
+  font-size: 14px;
+  padding-top: 18rpx;
+}
+.hot .hot-title{
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 20rpx;
+}
+.hot .hot-title text:nth-child(1){
+  float: left;
+}
+.hot .hot-title text:nth-child(2){
+  float: right;
+  color: #f00;
+  font-size: 12px;
+  margin-right: 40rpx;
+}
+.hot-content{
+  width: 100%;
+  padding: 15rpx 10rpx;
+}
+.hot-content text{
+  background: #ddd;
+  padding: 5rpx 8rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  margin: 8rpx 10rpx;
+  display: inline-block;
+  font-size: 12px;
+}

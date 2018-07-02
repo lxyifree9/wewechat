@@ -1,0 +1,38 @@
+<view class="search-tab">
+  <view class="search_scroll_x_box">
+    <view class="search_hot_box">
+      <image src='https://www.ifree9.cn/uploads/static/search.png'></image>
+      <view class="search-text"><input class="search-input" type="text" placeholder="请输入你要搜索的内容" focus="{{focus}}"  value="{{searchValue}}" bindinput="searchValueInput" /></view>
+      <view class="search-btn" bindtap="suo" data-id='1'>搜索</view>
+    </view>
+  </view>
+</view>
+<!--默认显示-->
+<view class='hot'>
+  <view class='hot-title'>
+    <text>热门推荐</text>
+    <text>换一批</text>
+  </view>
+  <view class='hot-content'>
+    <text>信阳毛尖</text>
+    <text>流苏包</text>
+    <text>螃蟹</text>
+    <text>清火开胃 婴儿</text>
+    <text>枣夹核桃</text>
+    <text>荷兰 进口牡蛎片</text>
+    <text>进口猕猴桃 奇异果</text>
+    <text>信阳毛尖</text>
+    <text>流苏包</text>
+    <text>螃蟹</text>
+    <text>清火开胃 婴儿</text>
+    <text>枣夹核桃</text>
+    <text>荷兰 进口牡蛎片</text>
+    <text>进口猕猴桃 奇异果</text>
+  </view>
+</view>
+<!--遮罩层显示搜索内容-->
+<view class="search_no" wx:if="{{!centent_Show}}">  
+  <text>很抱歉,没有找到您要搜索的资料/(ㄒoㄒ)/~~</text>  
+</view> 
+<import src="card.wxml" />  
+<template is="nanshen_card" data="{{nanshen_card,img}}" />  

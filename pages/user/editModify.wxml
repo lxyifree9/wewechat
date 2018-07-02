@@ -1,0 +1,23 @@
+<view>
+  <!-- title -->
+  <text class="title">当前登录账号：</text>
+
+  <view class="modify">
+    <block wx:for="{{userMsgList}}">
+      <!-- 头像 -->
+      <view class="avatar">
+        <text class="left">{{item.leftTxt}} ：</text>
+        <view class="right">
+          <image wx:if="{{item.avatarJudge}}" class="avatarMsg" src="{{item.avatar}}"></image>
+          <text wx:else class="avatarMsgTxt">{{item.avatar}}</text>
+          <image class="with_arrow" src="{{item.sword}}"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 退出登录 -->
+  <view class="avatarExit">
+    <text class="exitLogon" bindtap="bindLoginTap">退出登录</text>
+  </view>
+
+</view>

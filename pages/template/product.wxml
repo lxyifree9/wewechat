@@ -1,0 +1,13 @@
+<template name="product">
+  <view class="half">
+    <view class="product-pic">
+      <image src="{{item.goodsPic}}"></image>
+      <text class="product-desc">{{item.goodsDetails}}</text>
+      <text class="product-price">￥{{item.goodsPrice}}</text>
+    </view>
+    <view class="discuss">
+      <text class="discuss-good">好评率{{item.praise}}%</text>
+      <text class="product-alike">看相似</text>
+    </view>
+  </view>
+</template>

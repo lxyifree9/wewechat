@@ -1,0 +1,237 @@
+
+/*trynew*/
+.trynew{
+  width: 100%;
+  font-size: 13px;
+  background-image: -webkit-linear-gradient(top, rgb(255,255,240), rgb(255,228,225));
+}
+.hotsale-title{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #efefef;
+}
+.hotsale-title image{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.hotsale-title .text{
+  display: inline-block;
+  margin-left: 8rpx;
+  vertical-align: middle;
+}
+.text-trynew{
+  color:#ee9922;
+}
+.text-selected{
+  color:#f00;
+}
+
+.trynew_scroll_x_box {
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.trynew_hot_box {
+  height: 100%;
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+}
+.trynew_hot_img{
+  width: 88px;
+  height: 88px;
+  margin:10px 10px 0 10px;
+}
+.trynew_price{
+  width: 88px;
+  height: 50px;
+  margin:3px 10px 0 10px;
+  text-align: center;
+}
+.trynew_hot_desc{
+  display: block;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  color: #000;
+  overflow: hidden;
+}
+.trynew_hot_price{
+  display: block;
+  width: 100%;
+  height: 18px;
+  color:#f00;
+  font-size: 13px;
+}
+/*recommend-product*/
+.recommend-product{
+  width: 100%;
+  background: rgba(229,229,229,1);
+}
+.productshow{
+  width: 100%;
+  padding: 5rpx;
+}
+.half{
+  width: 48.2%;
+  display: inline-block;
+  margin: 5rpx;
+  background: #fff;
+}
+.product-pic{
+  width: 100%;
+}
+.product-pic image{
+  width: 100%;
+  height:363rpx;
+}
+.product-desc{
+  height: 2.5em;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  color: #232326;
+  margin-top: .3em;
+  line-height: 1.3em;
+  padding: 0 .2em;
+}
+.product-price{
+  color: #f23030;
+	margin-top:0.5em;
+  height: 1.2em;
+  line-height: 13px;
+}
+.discuss{
+  width: 100%;
+  position: relative;
+}
+.discuss-good{
+  font-size:1.2em;
+  margin-top: 8rpx;
+  display: inline-block;
+  -webkit-transform: scale(0.5, 0.5);
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 .2em;
+}
+.product-alike{
+  right:0;
+	position: absolute;
+	margin-right: 15rpx;
+	font-size:1.3em;
+	padding: 0.25em;
+	display: inline-block;
+  border: 1px solid #bfbfbf;
+  border-radius: 0.25em;
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-transform-origin: top right;
+}
+/******************************************/
+
+ .layload{
+  width: 100%;
+  height:65rpx;
+  line-height: 65rpx;
+  font-size: 26rpx;
+  color: #7f7f7f;
+  text-align: center;
+  background: #ddd;
+  border-top: 1px solid #efefef;
+}
+.loading{
+
+  
+} 
+
+.otherbar {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 13px;
+  background: #f8f8f8;
+  color: #848689;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom:3rpx;
+}
+
+.otherbar-center {
+  width: 100%;
+  height: 100%;
+}
+
+.otherbar-center text {
+  margin: 0 15rpx;
+}
+
+.copyright {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 11px;
+}
+/* 返回顶部 */
+.widget-goTop { 
+  position: fixed; 
+  bottom: 125rpx; 
+  right: 20rpx; 
+  /* background: rgba(0,0,0,.6);  */
+  border-radius: 50%; 
+  overflow: hidden; 
+  z-index: 99999; 
+} 
+.widget-goTop .gotop-wrap { 
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width: 90rpx; 
+  height: 90rpx; 
+  font-size: 25rpx; 
+  color: #fff; 
+  border-radius: 50%; 
+  /* background-color: rgba(0,0,0,.6);  */
+  -webkit-background-size: 100rpx auto; 
+  border: 3px dashed #6495ED;
+}
+.icon-top{
+  width: 100%;
+  height: 100%;
+}
+.icon-top image{
+  width: 80rpx; 
+  height: 80rpx; 
+  margin: 5rpx;
+}
+.poscroll{
+  position:absolute; 
+  top:0; 
+  left:0; 
+  right:0; 
+  bottom:0;
+}

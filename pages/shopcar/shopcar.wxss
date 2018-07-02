@@ -1,0 +1,295 @@
+/* @import "../template/product.wxss"; */
+template{
+  margin-bottom: 80rpx;
+}
+.shopCarBox{
+  width: 100%;
+}
+.shopCarTop{
+  width: 100%;
+  height: 65rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  line-height: 65rpx;
+}
+.address{
+  width: 70%;
+  height: 65rpx;
+}
+.local{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.localAddress{
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+.editProduct{
+  font-size: 24rpx;
+  color: #f00;
+}
+/***productBox***/
+.productBox{
+  width: 100%;
+  border-top: 1px solid #dfdfdf;
+}
+.productSaler{
+  width: 100%;
+  padding-top: 15rpx;
+  background: #fff;
+  margin-bottom: 3rpx;
+  box-shadow: 1px 1px 2px #D8BFD8;
+}
+.productImg{
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+}
+.productSalerName{
+  font-size: 26rpx;
+   vertical-align: middle;
+}
+/**productSaleChild**/
+.productSaleChild{
+  border-top: 1px solid #dfdfdf;
+  display: flex;
+  flex-direction: row;
+} 
+.productChildImg{
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 8rpx;
+  margin-top: 20rpx;
+}
+.productChildDesc{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.productDescTitle{
+  width: 96%;
+  height: 65rpx;
+  overflow: hidden;
+  font-size: 25rpx;
+  font-weight: bold;
+  color: #000;
+}
+.fresh{
+  height: 22rpx;
+  font-size: 20rpx;
+  font-weight: none;
+  border: 1px solid #06ff00;
+  border-radius: 5rpx;
+  line-height: 22rpx;
+  color: #06ff00;
+}
+.productDescParameter{
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  margin-top: 10rpx;
+  padding-left: 8rpx;
+  font-size: 22rpx;
+  color: #696969;
+  border: 1px solid #dfdfdf;
+  width: 95%;
+}
+.quantity{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+.quantityPrice{
+  color: #f00;
+  font-size: 26rpx;
+  line-height: 35rpx;
+}
+.stepper{
+  display: flex;
+  flex-direction: row;
+  width: 126rpx;  
+  height: 35rpx;
+  line-height: 35rpx;   
+  border: 1px solid #ccc;  
+  border-radius: 6rpx;
+  overflow: hidden;
+}   
+.stepper text {  
+    width: 28rpx; 
+    height: 35rpx; 
+    line-height: 35rpx;  
+    text-align: center; 
+    font-size: 28rpx;
+    font-weight: bold;
+}  
+.quantity image{
+  width: 23px;
+  height: 23px;
+  border: 0;
+  margin-right: 10rpx;
+}
+.number{
+  width: 70rpx!important;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #483d8b;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}   
+/*普通样式*/  
+.stepper .normal{  
+    color: black;  
+}  
+/*禁用样式*/  
+.stepper .disabled{  
+    color: #ccc;  
+} 
+/**settlement**/ 
+.settlement{
+  margin-top: 15rpx;
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  border-top: 1px solid #dfdfdf;
+  box-shadow: 1px 1px 2px #bbb;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  z-index: 99;
+}
+.settlementCircle{
+  font-size: 26rpx;
+  width: 80rpx;
+}
+.settlementCircle text{
+  display: block;
+  text-align: center;
+}
+.settlementSelect{
+  display: inline-block;
+  width: 300rpx;
+  text-align: center;
+  vertical-align: middle;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.settlementSelect text{
+  float: left;
+  height: 80rpx;
+  vertical-align: middle;
+}
+.SelectAllPrice{
+  font-size: 26rpx;
+  color: #483d8b;
+}
+.redPrice{
+  color: #f00;
+  font-weight: bold;
+}
+.settlementButton{
+  width: 150rpx;
+  height: 100%;
+  background: #FF4500;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+/**alike**/
+.alike{
+  width: 100%;
+  margin-top: 15rpx;
+  margin-bottom: 80rpx;
+}
+.alikeTitle{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background: #dfdfdf;
+}
+.alikeTitleTxt{
+  width: 100%;
+  height: 100%;
+  font-size: 26rpx;
+  color: #191970;
+  font-family: 'Microsoft Yahei'
+}
+/***productshow****/
+.productshow{
+  width: 100%;
+  padding: 5rpx;
+}
+.half{
+  width: 48.5%;
+  display: inline-block;
+  margin: 5rpx;
+  background: #fff;
+}
+.product-pic{
+  width: 100%;
+}
+.product-pic image{
+  width: 100%;
+  height: 363rpx;
+}
+.product-desc{
+  height: 2.5em;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  color: #232326;
+  margin-top: .3em;
+  line-height: 1.3em;
+  padding: 0 .2em;
+}
+.product-price{
+  color: #f23030;
+	margin-top:0.5em;
+  height: 1.2em;
+  line-height: 13px;
+}
+.discuss{
+  width: 100%;
+  position: relative;
+}
+.discuss-good{
+  font-size:1.2em;
+  margin-top: 8rpx;
+  display: inline-block;
+  -webkit-transform: scale(0.5, 0.5);
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 .2em;
+}
+.product-alike{
+  right:0;
+	position: absolute;
+	margin-right: 15rpx;
+	font-size:1.3em;
+	padding: 0.25em;
+	display: inline-block;
+  border: 1px solid #bfbfbf;
+  border-radius: 0.25em;
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-transform-origin: top right;
+}

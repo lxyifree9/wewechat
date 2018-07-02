@@ -1,0 +1,99 @@
+<view class="buypage">
+  <!-- 购买人地址信息 -->
+  <view class="topAddress">
+    <view class="nameMsg">
+      <text class="payerName">李旭尧</text>
+      <text class="payerPhone">150****8823</text>
+    </view>
+    <view class="addressMsg">
+      <text class="addressDesc"><text class="blue">公司</text>四川省成都市高新区天府二街萃华路成都国际科技节能大厦B座9F</text>
+      <view class="exchange">
+        <image class="exchangeImg" src="https://www.ifree9.cn/uploads/static/icon-arrowdown.png"></image>
+      </view>
+
+    </view>
+    <view class="line"></view>
+  </view>
+
+  <view class='proCont'>
+    <!-- 所购商品信息 -->
+    <view class="productMsg" wx:for="{{shopCarDataList}}">
+      <!-- 商家名 -->
+      <view class="productStore">
+        <image class="storeLogo"></image>
+        <text class="storeName">{{item.goodsName}}</text>
+      </view>
+      <!-- 商品名 -->
+      <view class="productSaleChild">
+        <view class="productChildPic">
+          <image class="productChildImg" src="{{item.goodsPic}}" bindchange="checkboxChange"></image>
+        </view>
+        <view class="productChildDesc">
+          <text class="productDescTitle"><text class="fresh">生鲜</text>{{item.goodsDetails}}</text>
+          <text class="productDescParameter">{{item.goodsPortion}}</text>
+          <view class="quantity">
+            <view class="quantityPrice" catchtap="bindAllPrice">
+            ￥{{item.goodsPrice*item.count}}</view>
+            <view class="stepper">
+              <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+              <view class="number" bindchange="bindManual">{{item.count}}</view>
+              <text class="normal" bindtap="bindPlus">+</text>
+            </view>
+          </view>
+        </view>
+      </view> 
+    </view>
+  </view>
+    <!-- 商品金额 -->
+    <view class="allPrice">
+      <view class="genre">
+        <text class="category">商品金额</text>
+        <text class="price"> ￥{{total}}</text>
+      </view>
+       <view class="genre">
+        <text class="category">运费</text>
+        <text class="price">+￥0</text>
+      </view>
+      <view class="genre">
+        <text class="category">抵用券</text>
+        <text class="price">-￥0</text>
+      </view>
+      <view class="genre">
+        <text class="category">促销优惠</text>
+        <text class="price">-￥0</text>
+      </view>
+    </view>
+    <view class="result">
+      <text class="resPrice">实付金额 :<text class="resNum">￥{{total}}</text> </text>
+    </view>
+    <!-- 支付方式 -->
+    <view class="payWays">
+      <button class="wxPay" type="primary" size="{{primarySize}}"
+       loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> 微信支付 </button>
+
+      <button class="con" type="default" size="{{defaultSize}}"
+       loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" 
+        hover-class="other-button-hover"> 货到付款 </button>
+
+      <button class="another" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="default" bindtap="showModal" bindload="imageLoad" hover-class="other-button-hover"> 找人代付 </button>
+    </view>
+</view>
+<!-- 遮罩层 -->
+<view class="container-column">  
+     
+    <view animation="{{animationData}}" class="container-column buydes-dialog-container" wx:if="{{showModalStatus}}">  
+        <view class="buydes-dialog-container-top" bindtap="hideModal"></view>  
+        <view class="container-column buydes-dialog-container-bottom">
+          <view class='cover'>
+            <image src='../../../assets/images/mark.jpg'></image>
+            <view bindtap="hideModal" class="buydes-dialog-container-bottom-item" >找好友付款</view>
+          </view>
+            
+        </view>  
+    </view>  
+  
+    <view class='covers'  style="width:{{imageWidth}}px;;height:{{imageHeight}}px;"></view>
+  
+</view>  

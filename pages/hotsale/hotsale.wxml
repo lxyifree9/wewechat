@@ -1,0 +1,57 @@
+<import src="../template/product.wxml" />
+<view>
+  <scroll-view scroll-y="true" bindscroll="scroll" scroll-top="{{scrollTop}}" bindscrolltolower="getMore" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+    <block wx:for="{{hotsaleDataList}}">
+      <view class="trynew">
+        <view class="hotsale-title">
+          <image src="https://www.ifree9.cn/uploads/static/trynew.png"></image>
+          <view class="text text-trynew">限时热销</view>
+        </view>
+        <scroll-view class="trynew_scroll_x_box" scroll-x="true">
+          <view class="trynew_hot_box" wx:for="{{item.tryNewList}}">
+            <image class="trynew_hot_img" src="{{item.secCode}}"></image>
+            <view class="trynew_price">
+              <text class="trynew_hot_desc">{{item.secName}}</text>
+              <text class="trynew_hot_price">￥{{item.newPrice}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="recommend-product">
+        <view class="hotsale-title">
+          <image src="https://www.ifree9.cn/uploads/static/giftchose.png"></image>
+          <view class="text text-selected">精选新品</view>
+        </view>
+        <!-- productshow -->
+        <view class="productshow">
+          <block wx:for="{{item.productList}}">
+            <view class="half">
+              <view class="product-pic">
+                <image src="{{item.goodsPic}}"></image>
+                <text class="product-desc">{{item.goodsDetails}}</text>
+                <text class="product-price">￥{{item.goodsPrice}}</text>
+              </view>
+              <view class="discuss">
+                <text class="discuss-good">好评率{{item.praise}}%</text>
+                <text class="product-alike">看相似</text>
+              </view>
+            </view>
+          </block>
+          <view class="layload">
+            <text class="loading">点击继续加载</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+
+    
+  </scroll-view>
+  <view class="widget-goTop" bindtap="goTop" wx:if="{{ floorstatus }}">
+    <view class="gotop-wrap">
+      <view class="icon-top">
+        <image src="/assets/images/index/gotop.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
